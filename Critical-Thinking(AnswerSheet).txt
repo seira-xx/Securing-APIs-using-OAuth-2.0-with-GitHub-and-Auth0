@@ -1,0 +1,41 @@
+Carl Louis M. Naval OBa
+a. Result Analysis 
+i. What happens when a user accesses /profile without logging in? 
+When a user accesses the http://127.0.0.1:5000/profile ithout logging in, the application checks 
+if a user session exists. Since there is no active session, the system blocks access and returns 
+an "Unauthorized"
+ii. What data is returned after successful login? 
+In my case, after successful login using GitHub OAuth, the application retrieves the user's GitHub profile
+information through the GitHub API. The specific data returned depends on what is requested and stored in
+the session within the profile route. In my protected route, the information includes:
+
+Username (login)
+Name
+Profile picture (avatar URL)
+Email (if public)
+Bio
+Number of followers
+Number of public repositories
+GitHub profile URL
+
+iii. Why is OAuth considered more secure than traditional login? 
+OAuth is more secure because it does not require users to share their passwords with the application.
+Instead, it uses access tokens provided by a trusted third-party service (like GitHub). This reduces
+the risk of password theft, allows users to revoke access anytime, and provides centralized authentication
+handled by secure providers.
+
+iv. What challenges did you encounter?
+Some challenges I encountered during the activity include:
+
+Configuring GitHub OAuth correctly (especially callback URL mismatch since i used localhost instead of 127.0.0.1)
+Missing or incorrect installation of Python dependencies
+Issues with Python not being recognized in the system PATH
+Handling session-based authentication properly
+Debugging unauthorized access errors when testing protected routes
+Confusion with uv commands since they differ from standard python and pip commands, which affected running and installing dependencies correctly
+
+v. What did you learn from this activity? 
+This activity helped me understand how OAuth 2.0 authentication works in real applications. I learned how to integrate
+GitHub login in a Flask application, manage user sessions, protect API routes, and retrieve user data securely. 
+I also gained experience in building authenticated web applications and understanding the importance of secure login 
+systems compared to traditional authentication methods.
